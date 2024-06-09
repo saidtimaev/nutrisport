@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon profil{% endblock %}
+
+{% block body %}
+    {% if user.roles[0] == "ROLE_ADMIN" %}
+        <a href="{{path('app_admin_edit_my_profile', {id: user.id})}}">Modifier mes informations</a> <br>
+    {% endif %}
+    {% if user.roles[0] == "ROLE_USER" %}
+        <h1>Dernières commandes</h1>
+        <a href="">Voir toutes mes commandes</a> <br>  
+        <a href="{{path('app_user_edit_my_profile', {id: user.id})}}">Modifier mes informations</a> <br>  
+    {% endif %}
+    <a href="">Supprimer mon compte</a> <br>
+{% endblock %}

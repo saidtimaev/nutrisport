@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edition de mon profil{% endblock %}
+
+{% block body %}
+    {{ form_start(editForm) }}
+    {{ form_row(editForm.username) }}
+    {{ form_row(editForm.email) }}
+    {{ form_row(editForm.password) }}
+    {{ form_row(editForm.valider) }}
+    {{ form_end(editForm) }}
+{% endblock %}
