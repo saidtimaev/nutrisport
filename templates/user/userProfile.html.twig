@@ -8,7 +8,7 @@
     Nom d'utilisateur : {{user.username}} <br>
     Email : {{user.email}} <br>
     Banni : {% if user.isBanned == true %} Oui {% else %} Non {% endif %}  <br>
-    {% if user.isBanned == true %} <a href="">Enlèver ban</a> {% else %} <a href="">Bannir</a> {% endif %}  <br>
+    {% if user.isBanned == true %} <a href="{{path('app_ban_unban_user', {id: user.id})}}">Unban</a> {% else %} <a href="{{path('app_ban_unban_user', {id: user.id})}}">Bannir</a> {% endif %}  <br>
     <a href="">Commandes</a><br>
     <a href="">Adresses de livraison</a><br>
     <a href="">Avis produits</a><br>

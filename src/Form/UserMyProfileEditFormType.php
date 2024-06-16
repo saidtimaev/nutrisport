@@ -15,28 +15,35 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-class AdminMyProfileEditFormType extends AbstractType
+class UserMyProfileEditFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('email', TextType::class)
-            ->add('password', RepeatedType::class, [
-                    'type' => PasswordType::class,
-                    'invalid_message' => 'Les mots de passe doivent correspondre',
-                    'required' => false,
-                    'mapped' => false,
-                    'first_options'  => ['label' => 'Mot de passe'],
-                    'second_options' => ['label' => 'Confirmer le mot de passe'],
-                ])
             ->add('username', TextType::class)
-            ->add('valider', SubmitType::class);
+            ->add('oldPassword', PasswordType::class, [
+                'mapped' => false,
+                'required' => false,
+                'label' => 'Ancien mot de passe',
+            ])
+            ->add('password', RepeatedType::class, [
+                'type' => PasswordType::class,
+                'invalid_message' => 'Les mots de passe doivent correspondre',
+                'required' => false,
+                'mapped' => false,
+                'first_options'  => ['label' => 'Nouveau mot de passe'],
+                'second_options' => ['label' => 'Confirmer le mot de passe'],
+            ])
+            ->add('valider', SubmitType::class,[
+                'label' => 'Enregistrer les modifications'
+            ]);
         }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => User::class
+            'data_class' => User::class,
         ]);
     }
 }
