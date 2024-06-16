@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProductController!{% endblock %}
+
+{% block body %}
+
+    <h1>Produits:</h1>
+
+    {% if products %}
+        {% for product in products %}
+            {{product.name}}
+        {% endfor %}
+    {% endif %}
+   
+
+    <a href="{{path('app_new_product')}}">Ajouter un produit</a>
+{% endblock %}

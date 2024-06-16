@@ -26,7 +26,7 @@
                     {% if app.user.roles[0] == "ROLE_ADMIN" %}
                         <li><a href="{{ path('app_my_profile', {id : app.user.id}) }}">Mon profil</a></li>
                         <li><a href="{{path('app_user')}}">Utilisateurs</a></li>
-                        <li><a href="">Produits</a></li>
+                        <li><a href="{{path('app_product')}}">Produits</a></li>
                         <li><a href="">Commandes</a></li>
                         <li><a href="">Régimes</a></li>
                         <li><a href="">Tags</a></li>
