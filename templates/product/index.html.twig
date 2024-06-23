@@ -8,10 +8,10 @@
 
     {% if products %}
         {% for product in products %}
-            {{product.name}}
+            {{product.name}} <a href="{{path('app_product_show', {id: product.id})}}">Afficher</a> <a href="{{path('app_product_edit', {id: product.id})}}">Modifier</a><br>
         {% endfor %}
     {% endif %}
    
 
-    <a href="{{path('app_new_product')}}">Ajouter un produit</a>
+    <a href="{{path('app_product_new')}}">Ajouter un produit</a>
 {% endblock %}

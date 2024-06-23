@@ -41,7 +41,7 @@ class ProductType extends AbstractType
                         ],
                         'extensionsMessage' => 'Le format du fichier choisi n\'est pas valide' 
                     ])
-                ]
+                    ],
             ])
             ->add('ajouter', SubmitType::class)
         ;

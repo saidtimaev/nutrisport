@@ -64,12 +64,12 @@ class Product
         return $this;
     }
 
-    public function isOnSale(): ?bool
+    public function getIsOnSale(): ?bool
     {
         return $this->isOnSale;
     }
 
-    public function setOnSale(bool $isOnSale): static
+    public function setIsOnSale(bool $isOnSale): static
     {
         $this->isOnSale = $isOnSale;
 
