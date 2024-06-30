@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Product;
+use App\Form\ProductDietsType;
 use App\Form\ProductType;
 use Doctrine\ORM\EntityManager;
 use App\Repository\ProductRepository;
@@ -34,10 +35,12 @@ class ProductController extends AbstractController
         $product = new Product();
         
         $form = $this->createForm(ProductType::class, $product);
+        $dietForm = $this->createForm(ProductDietsType::class);
         
         $form->handleRequest($request);
+        $dietForm->handleRequest($request);
         
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid() && $dietForm->isValid()) {
 
             $product = $form->getData();
 
@@ -69,7 +72,8 @@ class ProductController extends AbstractController
         }
 
         return $this->render('product/new.html.twig', [
-            'addProductForm' => $form
+            'addProductForm' => $form,
+            'dietForm' => $dietForm
         ]);
     }
 

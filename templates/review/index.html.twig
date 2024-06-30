@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Avis utilisateurs{% endblock %}
+
+{% block body %}
+
+    <h1>Liste des avis utilisateurs:</h1>
+
+    {% if reviews %}
+        {% for review in reviews %}
+            {{review.product.name}} {{review.user.username}} <a href="{{path('app_review_show', {id: review.id})}}">Afficher</a> <a href="">Modifier</a><a href="">Supprimer</a><br>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}

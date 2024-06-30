@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Avis utilisateur{% endblock %}
+
+{% block body %}
+
+<h1>Avis: </h1>
+
+    Nom du produit : {{review.product.name}}<br>
+    Auteur: {{review.user.username}}<br>
+    Date de publication: {{review.publicationDate|date("d/m/Y")}}<br>
+    Message : {{review.message}}<br>
+
+{% endblock %}

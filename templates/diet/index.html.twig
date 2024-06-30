@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Régimes{% endblock %}
+
+{% block body %}
+
+    <h1>Liste des régimes alimentaires</h1>
+
+    {% if diets %}
+        {% for diet in diets %}
+            {{diet.name}}<a href="">Modifier</a><a href="">Supprimer</a><br>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}

@@ -28,12 +28,12 @@
                         <li><a href="{{path('app_user')}}">Utilisateurs</a></li>
                         <li><a href="{{path('app_product')}}">Produits</a></li>
                         <li><a href="">Commandes</a></li>
-                        <li><a href="">Régimes</a></li>
+                        <li><a href="{{path('app_diet')}}">Régimes</a></li>
                         <li><a href="">Tags</a></li>
                         <li><a href="">Catégories</a></li>
                         <li><a href="">Sous-catégories</a></li>
                         <li><a href="">Statuts commandes</a></li>
-                        <li><a href="">Avis utilisateurs</a></li>
+                        <li><a href="{{path('app_review')}}">Avis utilisateurs</a></li>
                     {% endif %}
                     {% if app.user.roles[0] == "ROLE_USER" %}
                         <li><a href="{{path('app_home')}}">Accueil</a></li>
